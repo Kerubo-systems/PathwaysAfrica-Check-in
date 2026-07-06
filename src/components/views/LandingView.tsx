@@ -6,6 +6,7 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowRight, Sparkles, Shield, Heart, Compass } from 'lucide-react';
 import Button from '../Button';
+import studentsLearningImg from '../../assets/images/students_learning_1783014094443.jpg';
 
 interface LandingViewProps {
   onStart: () => void;
@@ -139,7 +140,7 @@ export default function LandingView({ onStart, setView }: LandingViewProps) {
               {/* Main Image frame */}
               <div className="relative rounded-[32px] overflow-hidden shadow-2xl border-4 border-white dark:border-slate-800 bg-slate-100 dark:bg-slate-800/50 aspect-video transition-all hover:scale-[1.01] duration-300">
                 <img
-                  src="/src/assets/images/students_learning_1783014094443.jpg"
+                  src={studentsLearningImg}
                   alt="Pathways Students learning together in a supportive environment"
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"

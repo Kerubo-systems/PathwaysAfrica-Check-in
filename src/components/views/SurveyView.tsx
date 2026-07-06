@@ -12,6 +12,7 @@ import CheckboxCard from '../CheckboxCard';
 import Slider from '../Slider';
 import TextArea from '../TextArea';
 import Button from '../Button';
+import celebrationSuccessImg from '../../assets/images/celebration_success_1783014107068.jpg';
 
 interface SurveyViewProps {
   onComplete: (data: SurveyResponse) => void;
@@ -697,7 +698,7 @@ export default function SurveyView({ onComplete, onCancel, showToast }: SurveyVi
                 {/* Generated Celebration Success Image */}
                 <div className="max-w-md mx-auto rounded-3xl overflow-hidden shadow-xl border-4 border-white dark:border-slate-800 bg-slate-100 dark:bg-slate-800 aspect-video relative group">
                   <img
-                    src="/src/assets/images/celebration_success_1783014107068.jpg"
+                    src={celebrationSuccessImg}
                     alt="Joyful abstract shapes celebrating growth and wins"
                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-102"
                     referrerPolicy="no-referrer"

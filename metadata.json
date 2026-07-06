@@ -1,0 +1,6 @@
+{
+  "name": "Pathways Check-in",
+  "description": "A beautiful, encouraging, and supportive wellness check-in platform for students to share their feelings, college application progress, and support needs.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

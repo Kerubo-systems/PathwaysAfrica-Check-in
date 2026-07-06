@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Playfair Display", serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --color-sleek-bg: #FAF7F2;
+  --color-sleek-accent: #054225;
+  --color-sleek-accent-light: #F2EBE1;
+  --color-sleek-border: #DCD3C5;
+  --color-sleek-charcoal: #1C2320;
+  --color-sleek-muted: #5C6760;
+  --color-sleek-peach: #EFE8DE;
+  --color-sleek-blob: #F6EFE6;
+
+  --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-float-delayed: float-delayed 8s ease-in-out infinite;
+  --animate-sparkle-twinkle: twinkle 6s ease-in-out infinite;
+}
+
+.dark {
+  --color-sleek-bg: #090F0C;
+  --color-sleek-accent: #34d399;
+  --color-sleek-accent-light: #12251b;
+  --color-sleek-border: #1b3527;
+  --color-sleek-charcoal: #f8fafc;
+  --color-sleek-muted: #94a3b8;
+  --color-sleek-peach: #1c3326;
+  --color-sleek-blob: #091a11;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes float-delayed {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(10px); }
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.05;
+    transform: scale(0.3) rotate(0deg);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.1) rotate(90deg);
+  }
+}
+
+/* Custom Base Styles */
+html, body {
+  font-family: var(--font-sans);
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+/* Custom Soft Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.3);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.5);
+}
+
+/* Smooth Focus States for Keyboard Navigation */
+*:focus-visible {
+  outline: 2px solid var(--color-sleek-accent);
+  outline-offset: 4px;
+}
+
+/* Soft ambient background shapes */
+.ambient-glow {
+  filter: blur(100px);
+  pointer-events: none;
+  opacity: 0.4;
+  mix-blend-mode: plus-lighter;
+}
+
+.dark .ambient-glow {
+  opacity: 0.15;
+}
+
+/* Sleek Interface design classes */
+.wellness-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 10px 35px -5px rgba(0, 0, 0, 0.03), 0 2px 10px -2px rgba(0, 0, 0, 0.01);
+}
+
+.dark .wellness-card {
+  background: rgba(13, 22, 17, 0.85);
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 12px 40px -8px rgba(0, 0, 0, 0.4);
+}
+
+.emoji-card {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid transparent;
+}
+
+.emoji-card:hover {
+  transform: translateY(-4px);
+  background: white;
+  border-color: var(--color-sleek-border);
+}
+
+.dark .emoji-card:hover {
+  background: rgba(16, 29, 22, 0.5);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.emoji-card.active {
+  border-color: var(--color-sleek-accent);
+  background: var(--color-sleek-accent-light);
+}
+
+.dark .emoji-card.active {
+  border-color: #10b981;
+  background: rgba(16, 185, 129, 0.12);
+}
